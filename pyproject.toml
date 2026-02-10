@@ -1,0 +1,27 @@
+[project]
+name = "cloud-codex-citer"
+version = "0.1.0"
+description = "Academic text citation annotator using PubMed + LLM providers"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.31.0",
+  "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+web = ["streamlit>=1.32.0"]
+test = ["pytest>=8.0.0"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
